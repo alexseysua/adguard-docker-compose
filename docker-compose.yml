@@ -11,9 +11,9 @@ networks:
       parent: bond0 # using ifconfig or ip a to view interface name
     ipam:
       config:
-      - subnet: "192.168.12.0/24"
-        ip_range: "192.168.12.254/32"
-        gateway: "192.168.12.1"
+      - subnet: "192.168.31.0/24"
+        ip_range: "192.168.31.254/32"
+        gateway: "192.168.31.1"
 ########################### SERVICES
 services:
   # AdGuard Home - DNS AdBlocking
@@ -23,7 +23,7 @@ services:
     restart: unless-stopped
     networks:
       dockervlan:
-        ipv4_address: 192.168.12.254 # IP address inside the defined range
+        ipv4_address: 192.168.31.254 # IP address inside the defined range
     ports:
       - 53:53/udp
       - 67:67/udp 
